@@ -27,7 +27,7 @@ export default function(InComponent, role = null) {
 
     const reduxProps = state => {
         return ({
-            auth: state.user.authUser
+            auth: ''//state.user.authUser
         })
     };
 
