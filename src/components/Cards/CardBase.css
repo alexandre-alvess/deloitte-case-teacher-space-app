@@ -1,0 +1,21 @@
+.card {
+    border-radius: 8px;
+    border: 1px solid #C3C3C3;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0, 0.15);
+    padding: 8px;
+    background-color: white;
+    display: block;
+    align-items: center;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+}
+
+.card-name {
+    font-weight: bold;
+    font-size: 38px;
+    margin-top: 5px;
+    padding-left: 20px;
+}

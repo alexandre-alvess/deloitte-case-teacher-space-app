@@ -2,6 +2,7 @@ import React from "react";
 
 import UIContainer from "../../components/UI/Container";
 import Title from "../../components/Title/Title";
+import TurmaCard from "../../components/Cards/TurmaCard/TurmaCard";
 
 export default function TurmaPage(){
     return (
@@ -9,6 +10,7 @@ export default function TurmaPage(){
             <Title name={'Turmas'}>
             </Title>
             <UIContainer>
+                <TurmaCard />
             </UIContainer>
         </div>
     );
