@@ -1,6 +1,6 @@
 import React from "react";
 
-import UIContainer from "../../components/UI/Container";
+import UIContainer from "../../components/UI/Container/Container";
 
 export default function NoPage() {
     return (

@@ -1,0 +1,1 @@
+export const REQUEST_QTD_ITEMS_MAX = 20;

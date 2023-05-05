@@ -1,21 +1,20 @@
-import { legacy_createStore as createStore } from "redux";
+import { persistStore } from 'redux-persist';
+import { legacy_createStore as createStore, applyMiddleware } from "redux";
+import createSagaMiddleware from '@redux-saga/core';
 
-const initialState = {
-    botaoClicado: false,
-};
+import persistedReducers from './modules/persist';
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case 'BOTAO_CLICADO':
-            const newState = { ...state };
-            newState.botaoClicado = !newState.botaoClicado;
-            return state;
-        
-        default:
-            return state;
-    }
-};
+import rootReducer from './modules/rootReducer';
+import rootSaga from './modules/rootSaga';
 
-const store = createStore(reducer);;
+const sagaMiddleware = createSagaMiddleware();
 
+const store = createStore(
+    persistedReducers(rootReducer),
+    applyMiddleware(sagaMiddleware)
+);
+
+sagaMiddleware.run(rootSaga);
+
+export const persistor = persistStore(store);
 export default store;

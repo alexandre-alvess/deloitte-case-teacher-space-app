@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 
 import { Title } from './styled';
 
+import * as actions from '../../store/modules/auth/actions';
 import axios from '../../services/axios';
-
 
 export default function Login() {
     //toast.error('sucesso!');
@@ -18,14 +18,21 @@ export default function Login() {
     //     getData();
     // }, []);
 
+    /* teste storage para armazenar token do usuário*/
+
+    const usuarioAuth = {
+        login: 'user@example.com',
+        senha: 'string'
+    };
+
+    /* teste storage para armazenar token do usuário*/
+
     const dispatch = useDispatch();
 
     function handleClick(e) {
         e.preventDefault();
 
-        dispatch({
-            type: 'BOTAO_CLICADO'
-        });
+        dispatch(actions.loginRequest(usuarioAuth));
         console.log('pagina de login');
     };
 

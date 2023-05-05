@@ -5,7 +5,7 @@ import AppRoutes from "../../routes/AppRoutes";
 import Header from "../Header/Header";
 import Navbar from "../Navbar.js/Navbar";
 
-export default function Main({children}) {
+export default function Main() {
 
     const [navVisible, showNavbar] = useState(true);
 
