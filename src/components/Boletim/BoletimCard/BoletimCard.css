@@ -1,0 +1,26 @@
+.boletim-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.boletim-card-info span {
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 3px;
+    padding-left: 10px;
+}
+
+.boletim-card-info-nota {
+    border-radius: 8px;
+    margin: 8px;
+    border: 2px solid #d40a0a;
+    box-shadow: 0 5px 7px 0 rgba(211, 77, 77, 0.15);
+    padding: 8px;
+}
+
+.boletim-card-info-nota a {
+    justify-content: center;
+    display: flex;
+}

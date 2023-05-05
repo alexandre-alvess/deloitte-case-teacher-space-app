@@ -1,15 +1,16 @@
 import React from "react";
 
 import UIContainer from "../../components/UI/Container/Container";
+import BaseForm from "../../components/Form/BaseForm";
 import Title from "../../components/Title/Title";
 
-export default function Home() {
+export default function PageBoletimForm() {
     return (
-        <div>
-            <Title name={'Olá fulano, seja bem vindo ao Espaço do Professor'}>
-            </Title>
+        <div className="form-boletim">
+            <Title name={'Lançamento Boletins'}/>
             <UIContainer>
+                <BaseForm />
             </UIContainer>
         </div>
-    )
-}
+    );
+};

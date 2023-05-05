@@ -1,37 +1,58 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import UIContainer from "../../components/UI/Container/Container";
 import Title from "../../components/Title/Title";
 import ListPessoaBase from "../../components/Pessoa/List/ListPessoaBase";
 import useApi from "../../components/utils/useApi";
 import  * as requestConstants from '../../utils/constants/requestConstants';
+import UIInfiniteScroll from '../../components/UI/InfiniteScrool/InfiniteScrool';
 
 export default function ProfessorPage(){
 
+    const [page, setPage] = useState(1);
     const [load, loadInfo] = useApi({
         url: '/v1/Professor/ConsultarLista',
         method: 'get',
-        params: {
-            pagina: 1,
-            quantidade: requestConstants.REQUEST_QTD_ITEMS_MAX,
-        },
     });
 
     useEffect(() => {
-       load();
+       load({
+            params: {
+                pagina: 1,
+                quantidade: requestConstants.REQUEST_QTD_ITEMS_MAX,
+            },
+       });
     }, []);
 
+    function fecthMore() {
+        const newPage = page + 1;
+        load({
+            isFetchMore: true,
+            params: {
+                pagina: newPage,
+                quantidade: requestConstants.REQUEST_QTD_ITEMS_MAX,
+            },
+            updateRequestInfo: (newRequestInfo, prevRequestInfo) => ({
+                ...newRequestInfo,
+                data: [...prevRequestInfo.data, ...newRequestInfo.data]
+            })
+        });
+
+        setPage(newPage);
+    }
+    
     return (
-        <div>
-            <Title name={'Professores'}>
-            </Title>
+        <div className="professor-page">
+            <Title name={'Professores'} />
             <UIContainer>
                 <ListPessoaBase
-                    loading={!loadInfo.loading}
+                    loading={loadInfo.loading}
                     pessoas={loadInfo.data}
                     type= {'PROFESSOR'}
                     error= {loadInfo.error}
                 />
+                { loadInfo.data && !loadInfo.loading && loadInfo.data?.length < loadInfo.total &&
+                    <UIInfiniteScroll fecthMore={fecthMore}/> }
             </UIContainer>
         </div>
     );

@@ -6,16 +6,34 @@
     background-color: white;
     display: block;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .card-header {
     display: flex;
     align-items: center;
     justify-content: left;
+    margin-bottom: 5px;
 }
 
 .card-name {
     font-weight: bold;
     font-size: 38px;
     padding-left: 20px;
+}
+
+@media only screen and (max-width: 770px) {
+    .card-name {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .card-header {
+        margin-bottom: 0;
+    }
+    
+    .card-name {
+        font-size: 25px;
+    }
 }

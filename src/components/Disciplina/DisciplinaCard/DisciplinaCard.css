@@ -1,0 +1,13 @@
+.disciplina-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.disciplina-card-info span {
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 3px;
+    padding-left: 10px;
+}

@@ -14,6 +14,7 @@ export default createGlobalStyle`
         font-family: sans-serif;
         background: ${colors.primaryDarkColor};
         color: ${colors.primaryColor};
+        overflow: hidden
     }
 
     html, body, #root {

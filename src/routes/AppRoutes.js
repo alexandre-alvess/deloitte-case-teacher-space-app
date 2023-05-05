@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
 
-import PageBoletimForm from "../pages/Form/BoletimForm";
+import PageBoletimForm from "../pages/Boletim/BoletimForm";
 import Home from "../pages/Home/Home";
 import AlunoPage from "../pages/Aluno/AlunoPage";
 import BoletimPage from "../pages/Boletim/BoletimPage";
@@ -23,7 +23,9 @@ export default function AppRoutes({ navVisible, classChildren }) {
             } />
             <Route path="/boletim/cadastro" element={ 
                 <PrivateRoute>
-                    <PageBoletimForm />
+                    <div className={classChildren}>
+                        <PageBoletimForm />
+                    </div>
                 </PrivateRoute>
             } />
             <Route path="/alunos" element={
