@@ -1,6 +1,6 @@
 import React from "react";
 
-import UIContainer from "../../components/UI/Container";
+import UIContainer from "../../components/UI/Container/Container";
 import Title from "../../components/Title/Title";
 import TurmaCard from "../../components/Cards/TurmaCard/TurmaCard";
 

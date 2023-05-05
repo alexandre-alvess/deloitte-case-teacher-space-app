@@ -11,11 +11,11 @@
 .card-header {
     display: flex;
     align-items: center;
+    justify-content: left;
 }
 
 .card-name {
     font-weight: bold;
     font-size: 38px;
-    margin-top: 5px;
     padding-left: 20px;
 }

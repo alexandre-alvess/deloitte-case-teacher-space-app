@@ -1,6 +1,6 @@
 import React from "react";
 
-import UIContainer from "../../components/UI/Container";
+import UIContainer from "../../components/UI/Container/Container";
 import BaseForm from "../../components/Form/BaseForm";
 
 export default function PageBoletimForm() {
