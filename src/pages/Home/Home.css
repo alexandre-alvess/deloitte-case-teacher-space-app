@@ -1,0 +1,62 @@
+.link-boletim {
+    float: right;
+    background-color: #C3073F;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    transition: ease-in-out 0.3s;
+}
+
+.link-boletim svg {
+    margin-right: 6px;
+}
+
+.link-boletim:hover{
+    background-color: #ec044a;
+    transform: scale(1.05);
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.content-info {
+    border-radius: 8px;
+    background-color: white;
+    margin-top: 15px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-info p {
+    margin-top: 10px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 450px) {
+    .link-boletim span {
+        display: none;
+    }
+
+    .link-boletim {
+        border-radius: 15px;
+        float: none;
+        display: flex;
+        flex-direction: row;
+        justify-items: right;
+        margin: 20px 10px 20px 280px;
+        max-width: 80px;
+    }
+
+    .content {
+        margin-top: 0;
+    }
+}

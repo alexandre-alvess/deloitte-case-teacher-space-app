@@ -21,8 +21,8 @@ export default function Login() {
     /* teste storage para armazenar token do usuário*/
 
     const usuarioAuth = {
-        login: 'user@example.com',
-        senha: 'string'
+        login: 'marcio.cabral@example.com',
+        senha: '12345678'
     };
 
     /* teste storage para armazenar token do usuário*/

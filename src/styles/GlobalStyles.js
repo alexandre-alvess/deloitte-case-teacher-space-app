@@ -57,14 +57,6 @@ export default createGlobalStyle`
     }
 
     @media only screen and (max-width: 770px) {
-        .page-with-navbar{
-            width: 100%;
-            margin-left: 22em;
-            padding-right: 23em;
-        }
-    }
-
-    @media only screen and (max-width: 450px){
         .page {
             flex-basis: 100%;
             margin: 0 10px;
@@ -76,4 +68,17 @@ export default createGlobalStyle`
             padding: 0;
         }
     }
+
+    /* @media only screen and (max-width: 450px){
+        .page {
+            flex-basis: 100%;
+            margin: 0 10px;
+            transition: margin-left 1s;
+        }
+
+        .page-with-navbar {
+            margin: 0 10px;
+            padding: 0;
+        }
+    } */
 `;

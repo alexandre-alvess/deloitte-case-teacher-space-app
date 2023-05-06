@@ -24,3 +24,16 @@
     justify-content: center;
     display: flex;
 }
+
+@media only screen and (max-width: 770px) {
+    .boletim-card-info span {
+        font-size: 12px;
+    }
+}
+
+
+@media only screen and (max-width: 450px){
+    .boletim-card-info span { 
+        font-size: 12px;
+    }
+}

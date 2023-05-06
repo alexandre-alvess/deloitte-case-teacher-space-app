@@ -4,10 +4,35 @@
     justify-content: left;
 }
 
+.disciplina-card-info {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: row;
+}
+
 .disciplina-card-info span {
     font-weight: bold;
     font-size: 15px;
-    display: block;
     margin-bottom: 3px;
     padding-left: 10px;
+}
+
+@media only screen and (max-width: 770px) {
+    .disciplina-card-info span {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .disciplina-card-info span { 
+        font-size: 12px;
+
+    }
+
+    .card-header svg {
+        padding: 3px;
+        display: none;
+    }
 }
