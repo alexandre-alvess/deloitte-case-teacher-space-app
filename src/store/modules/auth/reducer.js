@@ -3,7 +3,7 @@ import * as types from '../types';
 const initialState = {
     isLoggedIn: false,
     token: false,
-    user: {},
+    usuario: {},
     isLoading: false,
     userId: '',
     tipoPerfil: '',
@@ -20,6 +20,7 @@ export default function(state = initialState, action) {
             newState.userId = action.payload.usuario_id;
             newState.tipoPerfil = action.payload.tipo_perfil_usuario;
             newState.entidadeId = action.payload.entidade_id;
+            newState.usuario = action.payload.usuario;
 
             console.log('REDUCER', action.payload)
             return newState;

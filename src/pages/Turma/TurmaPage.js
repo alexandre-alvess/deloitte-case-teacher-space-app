@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import UIContainer from "../../components/UI/Container/Container";
+import UIContainerScroll from "../../components/UI/Container/ContainerScroll";
 import Title from "../../components/Title/Title";
 import useApi from "../../components/utils/useApi";
 import  * as requestConstants from '../../utils/constants/requestConstants';
@@ -45,7 +45,7 @@ export default function TurmaPage(){
         <div>
             <Title name={'Turmas'}>
             </Title>
-            <UIContainer>
+            <UIContainerScroll>
                 <TurmaList 
                     loading={loadInfo.loading}
                     items={loadInfo.data}
@@ -53,7 +53,7 @@ export default function TurmaPage(){
                 />
                 { loadInfo.data && !loadInfo.loading && loadInfo.data?.length < loadInfo.total &&
                     <UIInfiniteScroll fecthMore={fecthMore}/> }
-            </UIContainer>
+            </UIContainerScroll>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 import UIContainer from "../../components/UI/Container/Container";
-import BaseForm from "../../components/Form/BaseForm";
+import BaseForm from "../../components/Boletim/BoletimForm/BaseForm";
 import Title from "../../components/Title/Title";
 
 export default function PageBoletimForm() {

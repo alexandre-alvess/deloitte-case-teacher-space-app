@@ -39,7 +39,6 @@ export default function useApi(config) {
             
             response = await axios(finalConfig);
 
-            
             const newRequestInfo = {
                 ...initialRequestInfo,
                 data: response.data.dados
@@ -54,7 +53,6 @@ export default function useApi(config) {
             );
                 
         } catch (error) {
-            
             setRequestInfo(
                 finalConfig.updateRequestInfo({
                     ...initialRequestInfo,

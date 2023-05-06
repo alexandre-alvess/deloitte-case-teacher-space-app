@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import UIContainer from "../../components/UI/Container/Container";
+import UIContainerScroll from "../../components/UI/Container/ContainerScroll";
 import Title from "../../components/Title/Title";
 import ListPessoaBase from "../../components/Pessoa/List/ListPessoaBase";
 import useApi from "../../components/utils/useApi";
@@ -44,7 +44,7 @@ export default function ProfessorPage(){
     return (
         <div className="professor-page">
             <Title name={'Professores'} />
-            <UIContainer>
+            <UIContainerScroll>
                 <ListPessoaBase
                     loading={loadInfo.loading}
                     pessoas={loadInfo.data}
@@ -53,7 +53,7 @@ export default function ProfessorPage(){
                 />
                 { loadInfo.data && !loadInfo.loading && loadInfo.data?.length < loadInfo.total &&
                     <UIInfiniteScroll fecthMore={fecthMore}/> }
-            </UIContainer>
+            </UIContainerScroll>
         </div>
     );
 }
