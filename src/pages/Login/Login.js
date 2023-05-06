@@ -1,44 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { Title } from './styled';
+import './Login.css';
 
 import * as actions from '../../store/modules/auth/actions';
-import axios from '../../services/axios';
 
 export default function Login() {
-    //toast.error('sucesso!');
 
-    // React.useEffect(() => {
-    //     async function getData() {
-    //         const response = await axios.get('/v1/Professor/ConsultarLista?Quantidade=10&Pagina=1');
-    //         console.log(response.data);
-    //     }
-        
-    //     getData();
-    // }, []);
-
-    /* teste storage para armazenar token do usuário*/
-
-    const usuarioAuth = {
-        login: 'marcio.cabral@example.com',
-        senha: '12345678'
-    };
-
-    /* teste storage para armazenar token do usuário*/
+    const [email, setEmail] = useState('');
+    const [password, setPassord] = useState('');
 
     const dispatch = useDispatch();
 
     function handleClick(e) {
         e.preventDefault();
 
-        dispatch(actions.loginRequest(usuarioAuth));
+        dispatch(actions.loginRequest({
+            login: email,
+            senha: password
+        }));
         console.log('pagina de login');
     };
 
     return (
-        <>
-            <Title>Teste Login</Title>
-            <button type="button" onClick={handleClick} color='red'>Enviar</button>
-        </>);
+        <div className="login-container-center">
+            <div className="login">
+                <form onSubmit={handleClick}>
+                    <h1>Entrar</h1>
+                    <input
+                        type='text'
+                        placeHolder='email@email.com'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                     />
+
+                     <input
+                        type='password'
+                        placeHolder='****************'
+                        value={password}
+                        onChange={(e) => setPassord(e.target.value)}
+                     />
+
+                     <button type='submit'>Acessar</button> 
+                </form>
+
+            </div>
+        </div>
+    );
 }
